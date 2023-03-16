@@ -2,12 +2,12 @@ class Player {
     constructor() {
         this.position = {
             x: 100,
-            y: 100
+            y: 100,
         }
         this.width = 100
         this.height = 100
         this.sides = {
-            bottom: this.position.y + this.heigth
+            bottom: this.position.y + this.heigth,
         }
     }
     draw(){
@@ -19,6 +19,9 @@ class Player {
         if(this.sides.bottom < canvas.height){
         this.position.y++
         this.sides.bottom = this.position.y + this.height
+        console.log('goeg');
         }
+        console.log(this.position.y + this.heigth,);
+
     }
 }
