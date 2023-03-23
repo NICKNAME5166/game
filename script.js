@@ -25,7 +25,7 @@ function animate (){
     player.velocity.x = 0
     if (keys.d.pressed) {
       player.velocity.x = 1
-    } else if (key.a.pressed){
+    } else if (keys.a.pressed){
       player.velocity.x = -1
     }
     player.draw()
