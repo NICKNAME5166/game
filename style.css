@@ -1,3 +1,13 @@
-* {
-    background: rgb(57,56,82);
+body {
+    background: hsl(252, 19%, 21%);
+    display: flex;
+    justify-content: center;
+    bottom: 100vh;
+    align-items: center;
 }
+canvas {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
