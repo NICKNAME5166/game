@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.9" tiledversion="1.9.1" orientation="orthogonal" renderorder="right-down" width="16" height="9" tilewidth="64" tileheight="64" infinite="0" nextlayerid="6" nextobjectid="28">
+<map version="1.10" tiledversion="1.10.0" orientation="orthogonal" renderorder="right-down" width="16" height="9" tilewidth="64" tileheight="64" infinite="0" nextlayerid="6" nextobjectid="28">
  <editorsettings>
-  <export target="../EEE.js" format="js"/>
+  <export target="../../../colisions.js" format="js"/>
  </editorsettings>
  <tileset firstgid="1" source="../tilesets/Main.tsx"/>
  <tileset firstgid="248" source="../tilesets/Decorations.tsx"/>
@@ -45,7 +45,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <layer id="2" name="Collisions" width="16" height="9" opacity="0.19">
+ <layer id="2" name="Collisions" width="16" height="9" opacity="0.64">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
