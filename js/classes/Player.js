@@ -29,18 +29,18 @@ class Player {
     }
     update(){
      this.position.x += this.velocity.x
-     this.collisionBlocks.forEach()
+    //  this.collisionBlocks.forEach()
      for (let i = 0; i < this.collisionBlocks.length; i++) {
         const collisionBlocks = this.collisionBlocks[i]
 
-        if (this.position.x <= collisionBlock.position.x + collisionBlock.width &&
-            this.position.x + this.width >= collisionBlock.position.x &&
-            this.position.y + this.height >= collisionBlock.position.x &&
-            this.position.y <= collisionBlock.position.y + collisionBlock.height
+        if (this.position.x <= collisionBlocks.position.x + collisionBlocks.width &&
+            this.position.x + this.width >= collisionBlocks.position.x &&
+            this.position.y + this.height >= collisionBlocks.position.x &&
+            this.position.y <= collisionBlocks.position.y + collisionBlocks.height
         ) {
           if (this.velocity.x < -1){
             this.position.x =
-             collisionBlock.position.x + collisionBlock.width + 0.01
+             collisionBlocks.position.x + collisionBlocks.width + 0.01
              break
           }
 
