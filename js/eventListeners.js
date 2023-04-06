@@ -1,9 +1,19 @@
+const keys = {
+  w: {
+    pressed: false
+  },
+  a: {
+    pressed: false
+  },
+  d: {
+    pressed: false,
+  },
+}
 window.addEventListener("keydown", (event) => {
     console.log(event.key)
     switch (event.key) {
      case "w":
-       if (player.velocity.y === 0) player.velocity.y =  -20
-       
+       if (player.velocity.y === 0) player.velocity.y =  -20 
      break
      case "a":
      // move player to the left
@@ -14,8 +24,7 @@ window.addEventListener("keydown", (event) => {
      keys.d.pressed = true
      break
      case "ц":
-       if (player.velocity.y === 0) player.velocity.y =  -20
-       
+       if (player.velocity.y === 0) player.velocity.y =  -20 
      break
      case "ф":
      // move player to the left

@@ -19,17 +19,6 @@ const player = new Player({
   collisionBlocks, 
 })
 
-const keys = {
-  w: {
-    pressed: false
-  },
-  a: {
-    pressed: false
-  },
-  d: {
-    pressed: false,
-  },
-}
 function animate (){
     window.requestAnimationFrame(animate)
     backgroundLevel1.draw()
@@ -38,9 +27,9 @@ function animate (){
     })
     player.velocity.x = 0
     if (keys.d.pressed) {
-      player.velocity.x = 1
+      player.velocity.x = 5
     } else if (keys.a.pressed){
-      player.velocity.x = -1
+      player.velocity.x = -5
     }
     player.update()
     player.draw()
