@@ -28,57 +28,60 @@ class Player {
         this.update()
     }
     update(){
+    // Movement x axis
      this.position.x += this.velocity.x
-    //this.collisionBlocks.forEach()
+     //Collision x axis
      for (let i = 0; i < this.collisionBlocks.length; i++) {
         const collisionBlock = this.collisionBlocks[i]
-
+        //if collision exists(x axis)
         if (this.position.x <= collisionBlock.position.x + collisionBlock.width &&
             this.position.x + this.width >= collisionBlock.position.x &&
             this.position.y + this.height >= collisionBlock.position.y &&
             this.position.y <= collisionBlock.position.y + collisionBlock.height
         ) {
+            //collision on x axis going left
           if (this.velocity.x < -1){
             this.position.x =
              collisionBlock.position.x + collisionBlock.width + 0.01
              break
           }
-
+          //collision on x axis going right
           if (this.velocity.x > 1){
-             this.position.x = collisionBlock.position.x - this.width -0.01
+             this.position.x =
+              collisionBlock.position.x - this.width -0.01
              break
           }
         }
      }
 
-
+     //movement y axis
      this.position.y += this.velocity.y
      this.sides.bottom = this.position.y + this.height
-
-     for (let i = 0; i < this.collisionBlocks.length; i++) {
-        const collisionBlock = this.collisionBlocks[i]
-
-        if (this.position.x <= collisionBlock.position.x + collisionBlock.width &&
-            this.position.x + this.width >= collisionBlock.position.x &&
-            this.position.y + this.height >= collisionBlock.position.y &&
-            this.position.y <= collisionBlock.position.y + collisionBlock.height
-        ) {
-          if (this.velocity.y < -1){
-            this.position.y =
-             collisionBlock.position.y + collisionBlock.height + 0.01
-             break
-          }
-
-          if (this.velocity.y > 1){
-             this.position.y = collisionBlock.position.y - this.height - 0.01
-             break
-          }
-        }
-     }
-
-
+     //Gravity
      if(this.sides.bottom + this.velocity.y < canvas.height){
         this.velocity.y += this.gravity
         } else this.velocity.y = 0
-    }
+
+     //Collisions y axis
+    //  for (let i = 0; i < this.collisionBlocks.length; i++) {
+    //     const collisionBlock = this.collisionBlocks[i]
+
+    //     if (this.position.x <= collisionBlock.position.x + collisionBlock.width &&
+    //         this.position.x + this.width >= collisionBlock.position.x &&
+    //         this.position.y + this.height >= collisionBlock.position.y &&
+    //         this.position.y <= collisionBlock.position.y + collisionBlock.height
+    //     ) {
+    //       if (this.velocity.y < -1){
+    //         this.position.y =
+    //          collisionBlock.position.y + collisionBlock.height + 0.01
+    //          break
+    //       }
+
+    //       if (this.velocity.y > 1){
+    //          this.position.y = collisionBlock.position.y - this.height - 0.01
+    //          break
+    //       }
+    //     }
+    //  }
+ }
 }
