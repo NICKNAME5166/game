@@ -23,7 +23,7 @@ class Player {
         console.log(this.collisionBlocks)
     }
     draw(){
-        c.fillStyle = 'red'
+        c.fillStyle = 'blue'
         c.fillRect(this.position.x, this.position.y, this.width, this.height)
         this.update()
     }
@@ -32,7 +32,7 @@ class Player {
      this.position.x += this.velocity.x
      //Collision x axis
      for (let i = 0; i < this.collisionBlocks.length; i++) {
-        const collisionBlock = this.collisionBlocks[i]
+        let collisionBlock = this.collisionBlocks[i]
         //if collision exists(x axis)
         if (this.position.x <= collisionBlock.position.x + collisionBlock.width &&
             this.position.x + this.width >= collisionBlock.position.x &&
@@ -63,25 +63,26 @@ class Player {
         } else this.velocity.y = 0
 
      //Collisions y axis
-    //  for (let i = 0; i < this.collisionBlocks.length; i++) {
-    //     const collisionBlock = this.collisionBlocks[i]
+     //Not ready
+     for (let i = 0; i < this.collisionBlocks.length; i++) {
+        const collisionBlock = this.collisionBlocks[i]
 
-    //     if (this.position.x <= collisionBlock.position.x + collisionBlock.width &&
-    //         this.position.x + this.width >= collisionBlock.position.x &&
-    //         this.position.y + this.height >= collisionBlock.position.y &&
-    //         this.position.y <= collisionBlock.position.y + collisionBlock.height
-    //     ) {
-    //       if (this.velocity.y < -1){
-    //         this.position.y =
-    //          collisionBlock.position.y + collisionBlock.height + 0.01
-    //          break
-    //       }
+        if (this.position.x <= collisionBlock.position.x + collisionBlock.width &&
+            this.position.x + this.width >= collisionBlock.position.x &&
+            this.position.y + this.height >= collisionBlock.position.y &&
+            this.position.y <= collisionBlock.position.y + collisionBlock.height
+        ) {
+          if (this.velocity.y < -1){
+            this.position.y =
+             collisionBlock.position.y + collisionBlock.height + 0.01
+             break
+          }
 
-    //       if (this.velocity.y > 1){
-    //          this.position.y = collisionBlock.position.y - this.height - 0.01
-    //          break
-    //       }
-    //     }
-    //  }
+          if (this.velocity.y > 1){
+             this.position.y = collisionBlock.position.y - this.height - 0.01
+             break
+          }
+        }
+     }
  }
 }

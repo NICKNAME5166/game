@@ -3,8 +3,8 @@ const c = canvas.getContext('2d');
 canvas.width = 1024
 canvas.height = 576
 
-const pasredCollisions = collisionsLevel1.parse2D()
-const collisionBlocks = pasredCollisions.createObjects2D()
+const parsedCollisions = collisionsLevel1.parse2D()
+const collisionBlocks = parsedCollisions.createObjects2D()
 
 const backgroundLevel1 = new Sprite({
   position: {
@@ -18,6 +18,7 @@ const backgroundLevel1 = new Sprite({
 const player = new Player({
   collisionBlocks, 
 })
+
 
 function animate (){
     window.requestAnimationFrame(animate)
@@ -33,6 +34,7 @@ function animate (){
     }
     player.update()
     player.draw()
+    
     
 }
 

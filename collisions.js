@@ -1,3 +1,4 @@
+//not needed
 (function(name,data){
  if(typeof onTileMapLoaded === 'undefined') {
   if(typeof TileMaps === 'undefined') TileMaps = {};
