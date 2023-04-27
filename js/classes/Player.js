@@ -1,6 +1,6 @@
 class Player extends Sprite {
-  constructor({ collisionBlocks = [], imageSrc, frameRate }) {
-    super({ imageSrc, frameRate });
+  constructor({ collisionBlocks = [], imageSrc, frameRate, animations }) {
+    super({ imageSrc, frameRate, animations });
     this.position = {
       x: 200,
       y: 200,
@@ -22,7 +22,7 @@ class Player extends Sprite {
 
   update() {
     this.position.x += this.velocity.x;
-    this.position.y += this.velocity.y;// Fix: Update y position
+    this.position.y += this.velocity.y; // Fix: Update y position
 
     this.updateHitbox();
     this.checkForHorizontalCollisions();
@@ -43,7 +43,13 @@ class Player extends Sprite {
     //   );
     this.checkForVerticalCollisions();
   }
-
+  switchSprite(name) {
+    if (this.image === this.animations[name].image) return;
+    this.currentFrame = 0;
+    this.image = this.animations[name].image;
+    this.frameRate = this.animations[name].frameRate;
+    this.frameBuffer = this.animations[name].frameBuffer;
+  }
   updateHitbox() {
     this.hitbox = {
       position: {
@@ -118,9 +124,9 @@ class Player extends Sprite {
         }
         if (this.velocity.y > 0) {
           this.velocity.y = 0;
-          const offset = this.hitbox.position.y - this.position.y + this.hitbox.height;
-          this.position.y =
-            collisionBlock.position.y - offset - 0.01;
+          const offset =
+            this.hitbox.position.y - this.position.y + this.hitbox.height;
+          this.position.y = collisionBlock.position.y - offset - 0.01;
           break; // Fix: Add break statement to exit loop after resolving collision
         }
       }
