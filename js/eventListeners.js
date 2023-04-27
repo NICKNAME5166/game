@@ -24,7 +24,7 @@ window.addEventListener("keydown", (event) => {
      keys.d.pressed = true
      break
      case "ц":
-       if (player.velocity.y === 0) player.velocity.y =  -20 
+       if (player.velocity.y === 0) player.velocity.y =  -25 
      break
      case "ф":
      // move player to the left

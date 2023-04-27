@@ -22,18 +22,25 @@ class Player extends Sprite {
 
   update() {
     this.position.x += this.velocity.x;
-    this.position.y += this.velocity.y; // Fix: Update y position
+    this.position.y += this.velocity.y;// Fix: Update y position
 
     this.updateHitbox();
     this.checkForHorizontalCollisions();
     this.applyGravity();
-    // this.updateHitbox();
-    c.fillRect(
-      this.hitbox.position.x,
-      this.hitbox.position.y,
-      this.hitbox.width,
-      this.hitbox.height
-    );
+    this.updateHitbox();
+    //Hitbox test
+    // c.fillRect(
+    //     this.position.x,
+    //     this.position.y,
+    //     this.width,
+    //     this.height
+    //   );
+    //   c.fillRect(
+    //     this.hitbox.position.x,
+    //     this.hitbox.position.y,
+    //     this.hitbox.width,
+    //     this.hitbox.height
+    //   );
     this.checkForVerticalCollisions();
   }
 
@@ -84,6 +91,7 @@ class Player extends Sprite {
 
   applyGravity() {
     this.velocity.y += this.gravity;
+    this.position.y += this.velocity.y;
   }
 
   checkForVerticalCollisions() {
