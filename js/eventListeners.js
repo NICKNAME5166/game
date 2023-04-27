@@ -13,7 +13,7 @@ window.addEventListener("keydown", (event) => {
     console.log(event.key)
     switch (event.key) {
      case "w":
-       if (player.velocity.y === 0) player.velocity.y =  -20 
+       if (player.velocity.y === 0) player.velocity.y =  -25 
      break
      case "a":
      // move player to the left
