@@ -46,12 +46,24 @@ const player = new Player({
   },
 }); //Das ist Shadman sein Teil
 
+const doors = [
+  new Sprite ({
+    position: {
+      x: 0,
+      y: 0,
+    },
+    imageSrc: "./img/doorOpen.png",
+  }),
+]
+
 function animate() {
-  window.requestAnimationFrame(animate);
-  backgroundLevel1.draw();
+  window.requestAnimationFrame(animate)
+
+  backgroundLevel1.draw()
   collisionBlocks.forEach((collisionBlock) => {
-    collisionBlock.draw();
-  });
+    collisionBlocks.draw()
+  })
+ 
   player.velocity.x = 0;
   if (keys.d.pressed) {
     player.switchSprite("runRight");
@@ -69,4 +81,4 @@ function animate() {
   player.draw();
 }
 
-animate(); //Das ist Shadman sein Teil
+animate();
