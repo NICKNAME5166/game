@@ -22,25 +22,28 @@ class Player extends Sprite {
 
   update() {
     this.position.x += this.velocity.x;
-    this.position.y += this.velocity.y; // Fix: Update y position
+
 
     this.updateHitbox();
     this.checkForHorizontalCollisions();
     this.applyGravity();
     this.updateHitbox();
     //Hitbox test
-    // c.fillRect(
-    //     this.position.x,
-    //     this.position.y,
-    //     this.width,
-    //     this.height
-    //   );
-    //   c.fillRect(
-    //     this.hitbox.position.x,
-    //     this.hitbox.position.y,
-    //     this.hitbox.width,
-    //     this.hitbox.height
-    //   );
+    c.fillStyle = "rgba(100, 0, 255, 0.5)";
+    c.fillRect(this.position.x, this.position.y, this.width, this.height);
+    c.fillRect(
+      this.hitbox.position.x,
+      this.hitbox.position.y,
+      this.hitbox.width,
+      this.hitbox.height
+    );
+    c.fillStyle = 'rgba(255, 0, 0, 0.5)'
+        c.fillRect(192, 384, 64, 64)
+        c.fillStyle = 'rgba(255, 123, 0, 0.5)'
+        c.fillRect(128, 384, 64, 64)
+        c.fillStyle = 'rgba(255, 0, 230, 0.5)'
+        c.fillRect(64, 384, 64, 64)
+    //end of test
     this.checkForVerticalCollisions();
   }
   switchSprite(name) {
@@ -64,7 +67,7 @@ class Player extends Sprite {
   checkForHorizontalCollisions() {
     // Collision x axis
     for (let i = 0; i < this.collisionBlocks.length; i++) {
-      let collisionBlock = this.collisionBlocks[i];
+      const collisionBlock = this.collisionBlocks[i];
       // If collision exists(x axis)
       if (
         this.hitbox.position.x <=
@@ -89,6 +92,9 @@ class Player extends Sprite {
           const offset =
             this.hitbox.position.x - this.position.x + this.hitbox.width;
           this.position.x = collisionBlock.position.x - offset - 0.01;
+          console.log(this.hitbox)
+          console.log(collisionBlock);
+          
           break;
         }
       }
@@ -102,7 +108,7 @@ class Player extends Sprite {
 
   checkForVerticalCollisions() {
     for (let i = 0; i < this.collisionBlocks.length; i++) {
-      let collisionBlock = this.collisionBlocks[i];
+      const collisionBlock = this.collisionBlocks[i];
       // If collision exists(y axis)
       if (
         this.hitbox.position.x <=
