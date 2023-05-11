@@ -1,13 +1,37 @@
 body {
-    background: hsl(252, 19%, 21%);
+    background: rgb(63, 56, 81);
     display: flex;
     justify-content: center;
-    bottom: 100vh;
     align-items: center;
-}
-canvas {
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  canvas {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    margin-top: 3vh;
+  }
+  
+  .image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:6vh;
+  }
+  
+  img {
+    height: 60px;
+  }
+#muteButton {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    background-image: url(img/mute.png);
+    background-size: cover;
+    cursor: pointer;
   }
