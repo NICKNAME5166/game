@@ -7,6 +7,7 @@ class Sprite {
     frameBuffer = 2,
     loop = true,
     autoplay = true,
+    level = 0,
   }) {
     this.position = position
     this.image = new Image()
@@ -25,7 +26,7 @@ class Sprite {
     this.loop = loop
     this.autoplay = autoplay
     this.currentAnimation
-
+    this.level = level
     if (this.animations) {
       for (let key in this.animations) {
         const image = new Image()

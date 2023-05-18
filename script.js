@@ -46,7 +46,7 @@ const player = new Player({
         gsap.to(overlay, {
           opacity: 1,
           onComplete: () => {
-            level++
+            level = lastLevel
 
             if (level === 4) level = 1
             levels[level].init()
@@ -62,11 +62,11 @@ const player = new Player({
   },
 })
 
-let level = 1
+let level = 0
 let levels = {
   0: {
     init: () => {
-      parsedCollisions = collisionsLevel1.parse2D()
+      parsedCollisions = collisionsLevel0.parse2D()
       collisionBlocks = parsedCollisions.createObjectsFrom2D()
       player.collisionBlocks = collisionBlocks
       if (player.currentAnimation) player.currentAnimation.isActive = false
@@ -76,20 +76,69 @@ let levels = {
           x: 0,
           y: 0,
         },
-        imageSrc: './img/backgroundLevel1.png',
+        imageSrc: './img/backgroundLevel0.png',
       })
 
       doors = [
         new Sprite({
           position: {
-            x: 767,
-            y: 270,
+            x: 194,
+            y: 336,
           },
           imageSrc: './img/doorOpen.png',
           frameRate: 5,
           frameBuffer: 5,
           loop: false,
           autoplay: false,
+          level: 1,
+        }),
+        new Sprite({
+          position: {
+            x: 321,
+            y: 336,
+          },
+          imageSrc: './img/doorOpen.png',
+          frameRate: 5,
+          frameBuffer: 5,
+          loop: false,
+          autoplay: false,
+          level: 2,
+        }),
+        new Sprite({
+          position: {
+            x: 448,
+            y: 336,
+          },
+          imageSrc: './img/doorOpen.png',
+          frameRate: 5,
+          frameBuffer: 5,
+          loop: false,
+          autoplay: false,
+          level: 3,
+        }),
+        new Sprite({
+          position: {
+            x: 575,
+            y: 336,
+          },
+          imageSrc: './img/doorOpen.png',
+          frameRate: 5,
+          frameBuffer: 5,
+          loop: false,
+          autoplay: false,
+          level: 4,
+        }),
+        new Sprite({
+          position: {
+            x: 704,
+            y: 336,
+          },
+          imageSrc: './img/doorOpen.png',
+          frameRate: 5,
+          frameBuffer: 5,
+          loop: false,
+          autoplay: false,
+          level: 5,
         }),
       ]
     },

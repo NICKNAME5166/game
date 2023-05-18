@@ -9,17 +9,17 @@ body {
   
   canvas {
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
-    margin-top: 3vh;
+    margin-top: 2%;
   }
   
   .image-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top:6vh;
+    margin-top: 3%;
   }
   
   img {

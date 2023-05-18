@@ -1,3 +1,4 @@
+let lastLevel
 window.addEventListener("keydown", (event) => {
   if (player.preventInput) return
   console.log(event.key)
@@ -5,7 +6,7 @@ window.addEventListener("keydown", (event) => {
     case "w":
 
     for (let i = 0; i < doors.length; i++) {
-     const door = doors [i]
+     const door = doors[i]
 
      if (player.hitbox.position.x + player.hitbox.width <=
         door.position.x + door.width &&
@@ -18,6 +19,8 @@ window.addEventListener("keydown", (event) => {
          player.velocity.y = 0
          player.preventInput = true
          player.switchSprite("enterDoor")
+         lastLevel = door.level
+        //  console.log(door.level . lastLevel)
          door.play()
          return
        }
