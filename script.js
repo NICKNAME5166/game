@@ -48,7 +48,7 @@ const player = new Player({
           onComplete: () => {
             level = lastLevel
 
-            if (level === 4) level = 1
+            if (level === 6) level = 0
             levels[level].init()
             player.switchSprite('idleRight')
             player.preventInput = false

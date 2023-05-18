@@ -9,6 +9,7 @@
   <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
 </head>
 <body>
+  <img class="refresh-button" src="img/restart.png" alt="Refresh" onclick="refreshPage()">
   <div id="muteButton"></div>
 
   <canvas></canvas>
@@ -25,6 +26,12 @@
   <script src="js/eventListeners.js"></script>
   <script src="script.js"></script>
   <script src="js/music.js"></script>
+  <script>
+    // restart
+    function refreshPage() {
+      location.reload();
+    }
+  </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js" integrity="sha512-cOH8ndwGgPo+K7pTvMrqYbmI8u8k6Sho3js0gOqVWTmQMlLIi6TbqGWRTpf1ga8ci9H3iPsvDLr4X7xwhC/+DQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 </html>

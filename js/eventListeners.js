@@ -20,7 +20,8 @@ window.addEventListener("keydown", (event) => {
          player.preventInput = true
          player.switchSprite("enterDoor")
          lastLevel = door.level
-        //  console.log(door.level . lastLevel)
+         console.log(door.level)
+         console.log(lastLevel)
          door.play()
          return
        }

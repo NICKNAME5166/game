@@ -29,9 +29,18 @@ body {
     position: fixed;
     top: 10px;
     right: 10px;
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     background-image: url(img/mute.png);
+    background-size: cover;
+    cursor: pointer;
+  }
+  .refresh-button {
+    position: fixed;
+    top: 10px;
+    right: 80px;
+    width: 50px;
+    height: 50px;
     background-size: cover;
     cursor: pointer;
   }
