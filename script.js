@@ -8,6 +8,7 @@ let parsedCollisions
 let collisionBlocks
 let background
 let doors
+let enemies
 const player = new Player({
   imageSrc: './img/king/idle.png',
   frameRate: 11,
@@ -35,6 +36,17 @@ const player = new Player({
       frameBuffer: 4,
       loop: true,
       imageSrc: './img/king/runLeft.png',
+    },
+    hit: {
+      frameRate: 3,
+      frameBuffer: 4,
+      loop: false,
+      imageSrc: './img/king/hit.png',
+      onComplete: () => {
+        console.log('attack!')
+        // if (this.lastDirection === 'left') this.switchSprite('idleLeft')
+        // else this.switchSprite('idleRight')
+      },
     },
     enterDoor: {
       frameRate: 8,
@@ -80,7 +92,19 @@ let levels = {
         },
         imageSrc: './img/backgroundLevel0.png',
       })
-
+      enemies = [
+        new Sprite({
+          position: {
+            x: 420+200,
+            y: 258-64,
+          },
+          imageSrc: './img/idle.png',
+          frameRate: 11,
+          frameBuffer: 2,
+          loop: true,
+          autoplay: true,
+        }),
+      ]
       doors = [
         new Sprite({
           position: {
@@ -334,6 +358,9 @@ function animate() {
 
   doors.forEach((door) => {
     door.draw()
+  })
+  enemies.forEach((enemy) => {
+    enemy.draw()
   })
 
   player.handleInput(keys)

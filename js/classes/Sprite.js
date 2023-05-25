@@ -8,6 +8,7 @@ class Sprite {
     loop = true,
     autoplay = true,
     level = 0,
+    onscreen = true,
   }) {
     this.position = position
     this.image = new Image()
@@ -27,6 +28,7 @@ class Sprite {
     this.autoplay = autoplay
     this.currentAnimation
     this.level = level
+    this.onscreen = onscreen
     if (this.animations) {
       for (let key in this.animations) {
         const image = new Image()
@@ -36,6 +38,7 @@ class Sprite {
     }
   }
   draw() {
+    if (!this.onscreen) return
     if (!this.loaded) return
     const cropbox = {
       position: {
@@ -45,7 +48,13 @@ class Sprite {
       width: this.width,
       height: this.height,
     }
-
+    c.fillStyle = 'rgba(255, 0, 0, 0.5)'
+    c.fillRect(
+       this.position.x,
+       this.position.y,
+       this.width,
+       this.height
+     )
     c.drawImage(
       this.image,
       cropbox.position.x,
@@ -63,6 +72,13 @@ class Sprite {
 
   play() {
     this.autoplay = true
+  }
+  disappear() {
+    this.onscreen = false
+    this.position.x = 0
+      this.position.y = 0
+      this.width= 0
+      this.height=0
   }
 
   updateFrames() {

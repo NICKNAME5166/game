@@ -1,7 +1,7 @@
 let lastLevel
 window.addEventListener("keydown", (event) => {
   if (player.preventInput) return
-  console.log(event.key)
+  // console.log(event.key)
   switch (event.key) {
     case "w":
 
@@ -27,6 +27,30 @@ window.addEventListener("keydown", (event) => {
        }
     }
     if (player.velocity.y === 0) player.velocity.y =  -25 
+    break
+    case "Enter":
+    // hit
+    player.switchSprite('hit')
+    console.log('enter')
+    for (let i = 0; i < enemies.length; i++) {
+      const enemy = enemies[i]
+ 
+      if (((player.position.x <= enemy.position.x + enemy.width ||
+        player.position.x + player.width >= enemy.position.x) &&
+        player.position.y <= enemy.position.y + enemy.height &&
+        player.position.y + player.height >= enemy.position.y) ||
+        (player.position.x <= enemy.position.x + enemy.width &&
+          player.position.x + player.width >= enemy.position.x &&
+          (player.position.y <= enemy.position.y + enemy.height ||
+          player.position.y + player.height >= enemy.position.y))
+        ) {
+           player.switchSprite('hit')
+          console.log('hit')
+          // enemy.play()
+          enemy.disappear()
+          return
+        }
+     }
     break
     case "a":
     // move player to the left
@@ -128,7 +152,6 @@ window.addEventListener("keydown", (event) => {
  })
  
  window.addEventListener("keyup", (event) => {
-     console.log(event.key)
      switch (event.key) {
       case "a":
         // move player to the left

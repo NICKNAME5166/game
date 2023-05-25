@@ -1,5 +1,5 @@
 class Player extends Sprite {
-  constructor({ collisionBlocks = [], imageSrc, frameRate, animations, loop }) {
+  constructor({ collisionBlocks = [], imageSrc, frameRate, animations, loop, enemies = [] }) {
     super({ imageSrc, frameRate, animations, loop })
     this.position = {
       x: 200,
@@ -17,28 +17,29 @@ class Player extends Sprite {
     this.gravity = 1
 
     this.collisionBlocks = collisionBlocks
+    this.enemies = enemies
   }
 
   update() {
     // this is the blue box
-    // c.fillStyle = 'rgba(0, 0, 255, 0.5)'
+    c.fillStyle = 'rgba(0, 0, 255, 0.5)'
     // c.fillRect(this.position.x, this.position.y, this.width, this.height)
 
     this.position.x += this.velocity.x
 
     this.updateHitbox()
-
+    this.ifenemy()
     this.checkForHorizontalCollisions()
     this.applyGravity()
 
     this.updateHitbox()
 
-    // c.fillRect(
-    //   this.hitbox.position.x,
-    //   this.hitbox.position.y,
-    //   this.hitbox.width,
-    //   this.hitbox.height
-    // )
+    c.fillRect(
+      this.hitbox.position.x,
+      this.hitbox.position.y,
+      this.hitbox.width,
+      this.hitbox.height
+    )
     this.checkForVerticalCollisions()
   }
 
@@ -117,7 +118,28 @@ class Player extends Sprite {
     this.velocity.y += this.gravity
     this.position.y += this.velocity.y
   }
-
+  ifenemy(){
+    //if enemy
+    for (let i = 0; i < this.enemies.length; i++) {
+      const enemy = this.enemies[i]
+      if (
+        ((player.hitbox.position.x <= enemy.position.x + enemy.width ||
+    player.hitbox.position.x + player.hitbox.width >= enemy.position.x) &&
+    player.hitbox.position.y <= enemy.position.y + enemy.height &&
+    player.hitbox.position.y + player.hitbox.height >= enemy.position.y) ||
+    (player.hitbox.position.x <= enemy.position.x + enemy.width &&
+      player.hitbox.position.x + player.hitbox.width >= enemy.position.x &&
+      (player.hitbox.position.y <= enemy.position.y + enemy.height ||
+      player.hitbox.position.y + player.hitbox.height >= enemy.position.y))
+      ) {
+        console.log('game over')
+        
+        function refreshPage() {
+          location.reload();
+        }
+      }
+    }
+  }
   checkForVerticalCollisions() {
     for (let i = 0; i < this.collisionBlocks.length; i++) {
       const collisionBlock = this.collisionBlocks[i]
