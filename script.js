@@ -81,6 +81,7 @@ let levels = {
       parsedCollisions = collisionsLevel0.parse2D()
       collisionBlocks = parsedCollisions.createObjectsFrom2D()
       player.collisionBlocks = collisionBlocks
+      // 
       player.position.x = 420
       player.position.y = 258-64
       if (player.currentAnimation) player.currentAnimation.isActive = false
@@ -95,6 +96,7 @@ let levels = {
       enemies = [
         
       ]
+      player.enemies = enemies
       doors = [
         new Sprite({
           position: {
@@ -164,6 +166,7 @@ let levels = {
       parsedCollisions = collisionsLevel1.parse2D()
       collisionBlocks = parsedCollisions.createObjectsFrom2D()
       player.collisionBlocks = collisionBlocks
+      
       player.position.x = 227
       player.position.y = 323-64
       if (player.currentAnimation) player.currentAnimation.isActive = false
@@ -179,7 +182,7 @@ let levels = {
         new Sprite({
           position: {
             x: 490,
-            y: 378-90,
+            y: 378-56,
           },
           imageSrc: './img/idle.png',
           frameRate: 11,
@@ -188,6 +191,7 @@ let levels = {
           autoplay: true,
         }),
       ]
+      player.enemies = enemies
       doors = [
         new Sprite({
           position: {
@@ -209,6 +213,7 @@ let levels = {
       parsedCollisions = collisionsLevel2.parse2D()
       collisionBlocks = parsedCollisions.createObjectsFrom2D()
       player.collisionBlocks = collisionBlocks
+      
       player.position.x = 96
       player.position.y = 140
 
@@ -225,7 +230,7 @@ let levels = {
         new Sprite({
           position: {
             x: 145,
-            y: 506-90,
+            y: 506-56,
           },
           imageSrc: './img/idle.png',
           frameRate: 11,
@@ -234,6 +239,7 @@ let levels = {
           autoplay: true,
         }),
       ]
+      player.enemies = enemies
       doors = [
         new Sprite({
           position: {
@@ -255,6 +261,7 @@ let levels = {
       parsedCollisions = collisionsLevel3.parse2D()
       collisionBlocks = parsedCollisions.createObjectsFrom2D()
       player.collisionBlocks = collisionBlocks
+      
       player.position.x = 750
       player.position.y = 230
       if (player.currentAnimation) player.currentAnimation.isActive = false
@@ -270,7 +277,7 @@ let levels = {
         new Sprite({
           position: {
             x: 634,
-            y: 446-90,
+            y: 446-56,
           },
           imageSrc: './img/idle.png',
           frameRate: 11,
@@ -281,7 +288,7 @@ let levels = {
         new Sprite({
           position: {
             x: 332,
-            y: 446-90,
+            y: 446-56,
           },
           imageSrc: './img/idle.png',
           frameRate: 11,
@@ -290,6 +297,7 @@ let levels = {
           autoplay: true,
         }),
       ]
+      player.enemies = enemies
       doors = [
         new Sprite({
           position: {
@@ -311,6 +319,7 @@ let levels = {
       parsedCollisions = collisionsLevel4.parse2D()
       collisionBlocks = parsedCollisions.createObjectsFrom2D()
       player.collisionBlocks = collisionBlocks
+      
       player.position.x = 817-100 
       player.position.y = 212+64
       if (player.currentAnimation) player.currentAnimation.isActive = false
@@ -326,7 +335,7 @@ let levels = {
         new Sprite({
           position: {
             x: 332,
-            y: 446-90,
+            y: 446-56,
           },
           imageSrc: './img/idle.png',
           frameRate: 11,
@@ -337,7 +346,7 @@ let levels = {
         new Sprite({
           position: {
             x: 634,
-            y: 446-90,
+            y: 446-56,
           },
           imageSrc: './img/idle.png',
           frameRate: 11,
@@ -346,6 +355,7 @@ let levels = {
           autoplay: true,
         }),
       ]
+      player.enemies = enemies
       doors = [
         new Sprite({
           position: {
@@ -367,6 +377,7 @@ let levels = {
       parsedCollisions = collisionsLevel5.parse2D()
       collisionBlocks = parsedCollisions.createObjectsFrom2D()
       player.collisionBlocks = collisionBlocks
+      
       player.position.x = 79
       player.position.y = 150-64
       if (player.currentAnimation) player.currentAnimation.isActive = false
@@ -382,7 +393,7 @@ let levels = {
         new Sprite({
           position: {
             x: 145,
-            y: 506-90,
+            y: 506-56,
           },
           imageSrc: './img/idle.png',
           frameRate: 11,
@@ -393,7 +404,7 @@ let levels = {
         new Sprite({
           position: {
             x: 538,
-            y: 506-90,
+            y: 506-56,
           },
           imageSrc: './img/idle.png',
           frameRate: 11,
@@ -404,7 +415,7 @@ let levels = {
         new Sprite({
           position: {
             x: 612,
-            y: 252-90,
+            y: 252-56,
           },
           imageSrc: './img/idle.png',
           frameRate: 11,
@@ -414,6 +425,7 @@ let levels = {
         }),
         
       ]
+      player.enemies = enemies
       doors = [
         new Sprite({
           position: {

@@ -22,7 +22,7 @@ class Player extends Sprite {
 
   update() {
     // this is the blue box
-    // c.fillStyle = 'rgba(0, 0, 255, 0.5)'
+    c.fillStyle = 'rgba(0, 0, 255, 0.5)'
     // c.fillRect(this.position.x, this.position.y, this.width, this.height)
 
     this.position.x += this.velocity.x
@@ -123,20 +123,32 @@ class Player extends Sprite {
     for (let i = 0; i < this.enemies.length; i++) {
       const enemy = this.enemies[i]
       if (
-        ((player.hitbox.position.x <= enemy.position.x + enemy.width ||
-    player.hitbox.position.x + player.hitbox.width >= enemy.position.x) &&
-    player.hitbox.position.y <= enemy.position.y + enemy.height &&
-    player.hitbox.position.y + player.hitbox.height >= enemy.position.y) ||
-    (player.hitbox.position.x <= enemy.position.x + enemy.width &&
-      player.hitbox.position.x + player.hitbox.width >= enemy.position.x &&
-      (player.hitbox.position.y <= enemy.position.y + enemy.height ||
-      player.hitbox.position.y + player.hitbox.height >= enemy.position.y))
+        (this.hitbox.position.x <=
+          enemy.position.x + enemy.width &&
+        this.hitbox.position.x + this.hitbox.width >=
+          enemy.position.x &&
+        this.hitbox.position.y + this.hitbox.height >=
+          enemy.position.y &&
+        this.hitbox.position.y <=
+          enemy.position.y + enemy.height)
       ) {
+        player.preventInput = true
+        this.onscreen = false
         console.log('game over')
-        
-        function refreshPage() {
-          location.reload();
-        }
+        gsap.to(overlay, {
+          opacity: 1,
+          onComplete: () => {
+            level = 0
+            console.log(lastLevel)
+            levels[0].init()
+            player.switchSprite('idleRight')
+            player.preventInput = false
+            gsap.to(overlay, {
+              opacity: 0,
+            })
+            this.onscreen = true
+          },
+        })
       }
     }
   }

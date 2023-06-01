@@ -35,14 +35,14 @@ window.addEventListener("keydown", (event) => {
     for (let i = 0; i < enemies.length; i++) {
       const enemy = enemies[i]
  
-      if (((player.position.x <= enemy.position.x + enemy.width ||
-        player.position.x + player.width >= enemy.position.x) &&
-        player.position.y <= enemy.position.y + enemy.height &&
-        player.position.y + player.height >= enemy.position.y) ||
-        (player.position.x <= enemy.position.x + enemy.width &&
-          player.position.x + player.width >= enemy.position.x &&
-          (player.position.y <= enemy.position.y + enemy.height ||
-          player.position.y + player.height >= enemy.position.y))
+      if (player.position.x <=
+        enemy.position.x + enemy.width &&
+      player.position.x + player.width >=
+        enemy.position.x &&
+      player.position.y + player.height >=
+        enemy.position.y &&
+      player.position.y <=
+        enemy.position.y + enemy.height
         ) {
            player.switchSprite('hit')
           console.log('hit')
