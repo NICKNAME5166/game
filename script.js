@@ -322,7 +322,7 @@ let levels = {
       enemies = [
         new Sprite({
           position: {
-            x: 634,
+            x: 332,
             y: 446-90,
           },
           imageSrc: './img/idle.png',
@@ -333,7 +333,7 @@ let levels = {
         }),
         new Sprite({
           position: {
-            x: 332,
+            x: 634,
             y: 446-90,
           },
           imageSrc: './img/idle.png',
