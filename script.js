@@ -199,6 +199,7 @@ let levels = {
           frameBuffer: 5,
           loop: false,
           autoplay: false,
+          level: 0,
         }),
       ]
     },
@@ -244,6 +245,7 @@ let levels = {
           frameBuffer: 5,
           loop: false,
           autoplay: false,
+          level: 0,
         }),
       ]
     },
@@ -299,6 +301,7 @@ let levels = {
           frameBuffer: 5,
           loop: false,
           autoplay: false,
+          level: 0,
         }),
       ]
     },
@@ -354,6 +357,7 @@ let levels = {
           frameBuffer: 5,
           loop: false,
           autoplay: false,
+          level: 0,
         }),
       ]
     },
@@ -421,6 +425,7 @@ let levels = {
           frameBuffer: 5,
           loop: false,
           autoplay: false,
+          level: 0,
         }),
       ]
     },

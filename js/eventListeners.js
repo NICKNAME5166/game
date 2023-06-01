@@ -1,4 +1,4 @@
-let lastLevel
+let lastLevel = 0
 window.addEventListener("keydown", (event) => {
   if (player.preventInput) return
   // console.log(event.key)
