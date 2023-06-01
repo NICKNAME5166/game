@@ -93,17 +93,7 @@ let levels = {
         imageSrc: './img/backgroundLevel0.png',
       })
       enemies = [
-        new Sprite({
-          position: {
-            x: 420+200,
-            y: 258-64,
-          },
-          imageSrc: './img/idle.png',
-          frameRate: 11,
-          frameBuffer: 2,
-          loop: true,
-          autoplay: true,
-        }),
+        
       ]
       doors = [
         new Sprite({
@@ -185,7 +175,19 @@ let levels = {
         },
         imageSrc: './img/backgroundLevel1.png',
       })
-
+      enemies = [
+        new Sprite({
+          position: {
+            x: 490,
+            y: 378-90,
+          },
+          imageSrc: './img/idle.png',
+          frameRate: 11,
+          frameBuffer: 2,
+          loop: true,
+          autoplay: true,
+        }),
+      ]
       doors = [
         new Sprite({
           position: {
@@ -218,7 +220,19 @@ let levels = {
         },
         imageSrc: './img/backgroundLevel2.png',
       })
-
+      enemies = [
+        new Sprite({
+          position: {
+            x: 145,
+            y: 506-90,
+          },
+          imageSrc: './img/idle.png',
+          frameRate: 11,
+          frameBuffer: 2,
+          loop: true,
+          autoplay: true,
+        }),
+      ]
       doors = [
         new Sprite({
           position: {
@@ -250,7 +264,30 @@ let levels = {
         },
         imageSrc: './img/backgroundLevel3.png',
       })
-
+      enemies = [
+        new Sprite({
+          position: {
+            x: 634,
+            y: 446-90,
+          },
+          imageSrc: './img/idle.png',
+          frameRate: 11,
+          frameBuffer: 2,
+          loop: true,
+          autoplay: true,
+        }),
+        new Sprite({
+          position: {
+            x: 332,
+            y: 446-90,
+          },
+          imageSrc: './img/idle.png',
+          frameRate: 11,
+          frameBuffer: 2,
+          loop: true,
+          autoplay: true,
+        }),
+      ]
       doors = [
         new Sprite({
           position: {
@@ -282,7 +319,30 @@ let levels = {
         },
         imageSrc: './img/backgroundLevel4.png',
       })
-
+      enemies = [
+        new Sprite({
+          position: {
+            x: 634,
+            y: 446-90,
+          },
+          imageSrc: './img/idle.png',
+          frameRate: 11,
+          frameBuffer: 2,
+          loop: true,
+          autoplay: true,
+        }),
+        new Sprite({
+          position: {
+            x: 332,
+            y: 446-90,
+          },
+          imageSrc: './img/idle.png',
+          frameRate: 11,
+          frameBuffer: 2,
+          loop: true,
+          autoplay: true,
+        }),
+      ]
       doors = [
         new Sprite({
           position: {
@@ -314,7 +374,42 @@ let levels = {
         },
         imageSrc: './img/backgroundLevel5.png',
       })
-
+      enemies = [
+        new Sprite({
+          position: {
+            x: 145,
+            y: 506-90,
+          },
+          imageSrc: './img/idle.png',
+          frameRate: 11,
+          frameBuffer: 2,
+          loop: true,
+          autoplay: true,
+        }),
+        new Sprite({
+          position: {
+            x: 538,
+            y: 506-90,
+          },
+          imageSrc: './img/idle.png',
+          frameRate: 11,
+          frameBuffer: 2,
+          loop: true,
+          autoplay: true,
+        }),
+        new Sprite({
+          position: {
+            x: 612,
+            y: 252-90,
+          },
+          imageSrc: './img/idle.png',
+          frameRate: 11,
+          frameBuffer: 2,
+          loop: true,
+          autoplay: true,
+        }),
+        
+      ]
       doors = [
         new Sprite({
           position: {
