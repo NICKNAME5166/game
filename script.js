@@ -454,7 +454,7 @@ const keys = {
   d: {
     pressed: false,
   },
-}
+} //das einzige Teil, was ich hier gemacht hatte
 
 const overlay = {
   opacity: 0,
@@ -487,4 +487,4 @@ function animate() {
 }
 
 levels[level].init()
-animate()
+animate() //alle diese Teile wurde fast nur von Nikita erstellt
