@@ -4,12 +4,12 @@ class Player extends Sprite {
     this.position = {
       x: 200,
       y: 200,
-    }
+    } //Nikita sein Teil
 
     this.velocity = {
       x: 0,
       y: 0,
-    }
+    } //Nikita sein Teil
 
     this.sides = {
       bottom: this.position.y + this.height,
@@ -18,12 +18,13 @@ class Player extends Sprite {
 
     this.collisionBlocks = collisionBlocks
     this.enemies = enemies
-  }
+  } //Nikita sein Teil
 
   update() {
     // this is the blue box
     c.fillStyle = 'rgba(0, 0, 255, 0.5)'
     // c.fillRect(this.position.x, this.position.y, this.width, this.height)
+    //Nikita sein Teil
 
     this.position.x += this.velocity.x
 
@@ -31,9 +32,10 @@ class Player extends Sprite {
     this.ifenemy()
     this.checkForHorizontalCollisions()
     this.applyGravity()
-
+     //Nikita sein Teil
+    
     this.updateHitbox()
-
+    
     // c.fillRect(
     //   this.hitbox.position.x,
     //   this.hitbox.position.y,
@@ -41,7 +43,7 @@ class Player extends Sprite {
     //   this.hitbox.height
     // )
     this.checkForVerticalCollisions()
-  }
+  } //Shadman sein Teil
 
   handleInput(keys) {
     if (this.preventInput) return
@@ -58,7 +60,7 @@ class Player extends Sprite {
       if (this.lastDirection === 'left') this.switchSprite('idleLeft')
       else this.switchSprite('idleRight')
     }
-  }
+  } //Shadman sein Teil
 
   switchSprite(name) {
     if (this.image === this.animations[name].image) return
@@ -68,7 +70,7 @@ class Player extends Sprite {
     this.frameBuffer = this.animations[name].frameBuffer
     this.loop = this.animations[name].loop
     this.currentAnimation = this.animations[name]
-  }
+  } //Nikita sein Teil
 
   updateHitbox() {
     this.hitbox = {
@@ -79,7 +81,7 @@ class Player extends Sprite {
       width: 50,
       height: 53,
     }
-  }
+  } //Shadman sein Teil
 
   checkForHorizontalCollisions() {
     for (let i = 0; i < this.collisionBlocks.length; i++) {
@@ -112,12 +114,13 @@ class Player extends Sprite {
         }
       }
     }
-  }
+  } //Shadman sein Teil
 
   applyGravity() {
     this.velocity.y += this.gravity
     this.position.y += this.velocity.y
-  }
+  } //Nikita sein Teil
+  
   ifenemy(){
     //if enemy
     for (let i = 0; i < this.enemies.length; i++) {
@@ -151,7 +154,8 @@ class Player extends Sprite {
         })
       }
     }
-  }
+  } //Shadman und Nikita ihre Teile
+  
   checkForVerticalCollisions() {
     for (let i = 0; i < this.collisionBlocks.length; i++) {
       const collisionBlock = this.collisionBlocks[i]
@@ -185,4 +189,4 @@ class Player extends Sprite {
       }
     }
   }
-}
+} //Shadman sein Teil
