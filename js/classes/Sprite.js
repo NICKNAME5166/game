@@ -9,14 +9,16 @@ class Sprite {
     autoplay = true,
     level = 0,
     onscreen = true,
-  }) {
+  }) //Shadman sein Teil
+  {
     this.position = position
     this.image = new Image()
     this.image.onload = () => {
       this.loaded = true
       this.width = this.image.width / this.frameRate
       this.height = this.image.height
-    }
+    } //Shadman sein Teil
+    
     this.image.src = imageSrc
     this.loaded = false
     this.frameRate = frameRate
@@ -36,7 +38,8 @@ class Sprite {
         this.animations[key].image = image
       }
     }
-  }
+  } //Nikita sein Teil
+  
   draw() {
     if (!this.onscreen) return
     if (!this.loaded) return
@@ -65,7 +68,7 @@ class Sprite {
       this.position.y,
       this.width,
       this.height
-    )
+    ) //Nikita sein Teil
 
     this.updateFrames()
   }
@@ -79,7 +82,7 @@ class Sprite {
       this.position.y = 0
       this.width= 0
       this.height=0
-  }
+  } //Nikita sein Teil
 
   updateFrames() {
     if (!this.autoplay) return
@@ -101,4 +104,4 @@ class Sprite {
       }
     }
   }
-}
+} //Shadman sein Teil
